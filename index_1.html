@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chapter -1 JS </title>
+    </head>
+</html>
+
+<body>
+
+    <script>
+
+        const username = "arsh"; // const --> variable cannot be assigned
+        let loggedIn;
+        const post = Object.freeze({// freeze makes sure that the object anno be edited 
+
+            id:1,
+            title: "Hello World"
+        });
+
+        console.log(username);
+        console.log(post.title)
+        console.log(post)
+        
+        // Practice 2 :
+
+        const firstName ="";
+        const lastName ="";
+
+        let msg = "Hi "+firstname+" " +lastname;
+        console.log(msg)
+
+        //Practise 3 :
+
+        function MyName(name){
+            return (
+                `<p>${name}</p>`
+            )
+        }
+
+        const ArrowName = (name) =>{
+            return (
+                `<p>${name}</p>`
+            )
+        }
+
+        console.log(ArrowName("arsh"));
+
+        //Practise 4:
+
+        const posts = [
+            {
+                id:1,
+                title:"first post"
+            },
+            {
+                id:2,
+                title:"second post"
+            },
+            {
+                id: 3,
+                title:"third one" 
+            }
+        ]
+
+        const filteredPost = posts.filter(post => post.title.toLowerCase().include("post")).map(post =>{
+            console.log(post.title)
+        })
+
+        //Practise 5:
+
+            const postsContainer = document.getElementById("root");
+    const postsArray = [
+      {
+        id: 1,
+        slug: "#first-post",
+        title: "First post"
+      },
+      {
+        id: 2,
+        slug: "#second-post",
+        title: "Second post"
+      },
+      {
+        id: 3,
+        slug: "#last-one",
+        title: "Last one"
+      }
+    ];
+
+        postsArray.map(post =>{
+            const h2tag = document.createElement("h2");
+            const link = document.createElement("a");
+            link.setAttribute("href",post.slug);
+            const linkText = document.createTextNode(post.title);
+
+            link.appendChild(linkText);
+            h2.appendChild(link);
+
+            postsContainer.appendChild(h2);
+        });
+
+      
+
+
+
+    </script>
+</body>
